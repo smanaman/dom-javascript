@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        -o-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    body {
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 30px;
+        color: #777;
+        background: lightpink;
+        height: 100vh;
+    }
+
+    .container {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact input[type="tel"],
+    #contact input[type="url"],
+    #contact textarea,
+    #contact button[type="submit"] {
+        font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
+    }
+
+    #contact {
+        background: #F9F9F9;
+        padding: 25px;
+        margin: 50px 0;
+    }
+
+    #contact h3 {
+        color: #F96;
+        display: block;
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    #contact h4 {
+        margin: 5px 0 15px;
+        display: block;
+        font-size: 13px;
+    }
+
+    fieldset {
+        border: medium none !important;
+        margin: 0 0 10px;
+        min-width: 100%;
+        padding: 0;
+        width: 100%;
+    }
+
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact input[type="tel"],
+    #contact input[type="url"],
+    #contact textarea {
+        width: 100%;
+        border: 1px solid #CCC;
+        background: #FFF;
+        margin: 0 0 5px;
+        padding: 10px;
+    }
+
+    #contact input[type="text"]:hover,
+    #contact input[type="email"]:hover,
+    #contact input[type="tel"]:hover,
+    #contact input[type="url"]:hover,
+    #contact textarea:hover {
+        -webkit-transition: border-color 0.3s ease-in-out;
+        -moz-transition: border-color 0.3s ease-in-out;
+        transition: border-color 0.3s ease-in-out;
+        border: 1px solid #AAA;
+    }
+
+    #contact textarea {
+        height: 100px;
+        max-width: 100%;
+        resize: none;
+    }
+
+    #contact button[type="submit"] {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        background: #0CF;
+        color: #FFF;
+        margin: 0 0 5px;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    #contact button[type="submit"]:hover {
+        background: #09C;
+        -webkit-transition: background 0.3s ease-in-out;
+        -moz-transition: background 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    #contact button[type="submit"]:active {
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    #contact input:focus,
+    #contact textarea:focus {
+        outline: 0;
+        border: 1px solid #999;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #888;
+    }
+
+    :-moz-placeholder {
+        color: #888;
+    }
+
+    ::-moz-placeholder {
+        color: #888;
+    }
+
+    :-ms-input-placeholder {
+        color: #888;
+    }
+
+    .header {
+        background-color: orange;
+        max-width: 450px;
+        margin: auto;
+        text-align: center;
+        padding: 10px 0 10px 0;
+        color: white;
+
+    }
+
+    .main-container {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        margin: auto;
+        text-align: left;
+        font-family: arial;
+        background-color: rgb(86, 26, 176);
+        border: 1px solid black;
+
+    }
+
+    #button-container {
+        padding-top: 15px;
+        max-width: 400px;
+        margin: auto;
+        text-align: left;
+        font-family: arial;
+    }
+
+    .flex-card {
+        display: flex;
+    }
+
+    .desc {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .title-1 {
+        color: rgb(11, 11, 11);
+        font-size: 18px;
+    }
+
+    .title-2 {
+        color: rgb(11, 11, 11);
+        font-size: 12px;
+    }
+
+    .title-3 {
+        color: rgb(11, 11, 11);
+        font-size: 12px;
+    }
+
+    .title-4 {
+        color: rgb(11, 11, 11);
+        font-size: 18px;
+    }
+
+    img:hover {
+        opacity: 0.9;
+    }
+
+    span.span-label {
+        display: inline-block;
+        color: rgb(11, 11, 11);
+
+    }
+
+    button {
+        font-family: 'Hind', arial;
+        background-color: lightblue;
+        border-radius: 7px;
+        font-size: 17px;
+        cursor: pointer;
+        border: 1px solid orange;
+        width: 80px;
+    }
+
+    #girl-pic {
+        display: none;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .pic{
+        width: 120px;
+        height: 100%;
+    }
+</style>
+
+<body id="root">
+    <div class="container">
+        <form id="contact" action="" method="post">
+            <h3>Quick Contact</h3>
+            <h4>Contact us today, and get reply with in 24 hours!</h4>
+            <fieldset>
+                <input id="username" placeholder="Your name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input id="email" placeholder="Your Email Address" type="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <input id="tel" placeholder="Your Phone Number" type="tel" tabindex="3" required>
+            </fieldset>
+            <fieldset>
+                <textarea id="rem" placeholder="Type your Address Here...." tabindex="5" required></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="reset" id="contact-submit" data-submit="...Sending">reset</button>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+
+
+        </form>
+
+    </div>
+
+    
+   
+    <script>
+        let form = document.getElementById('contact');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+
+            let data = [{
+                name: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                img: 'data:image/jpeg;base64,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',
+                tel: document.getElementById('tel').value,
+                rem: document.getElementById('rem').value,
+            },
+
+
+
+            ]
+
+            data.forEach((value) => {
+                let body = document.getElementById('root')
+                // creat div
+                let firstdiv = document.createElement('div')
+
+                firstdiv.className = 'main-container'
+
+
+                body.appendChild(firstdiv)
+                // creat h2
+                let header = document.createElement('h2')
+
+                header.className = 'header'
+
+                firstdiv.appendChild(header)
+                // creat div
+
+                let flexcard = document.createElement('div')
+
+                flexcard.className = 'flex-card'
+
+                firstdiv.appendChild(flexcard)
+
+                // creat div
+                let imagecontainer = document.createElement('div')
+
+                imagecontainer.className = 'image-container'
+
+                flexcard.appendChild(imagecontainer)
+
+                // creat img
+                let img = document.createElement('img')
+
+                img.className = 'pic'
+                img.src = value.img
+                imagecontainer.appendChild(img)
+
+                // creat div
+                let textdiv = document.createElement('div')
+
+                textdiv.className = 'desc'
+
+                flexcard.appendChild(textdiv)
+
+                // creat p
+
+                let p = document.createElement('p')
+
+                textdiv.appendChild(p)
+
+
+                // creat p
+
+                let p1 = document.createElement('p')
+
+                textdiv.appendChild(p1)
+
+
+                // creat p
+
+                let p2 = document.createElement('p')
+
+                textdiv.appendChild(p2)
+
+                // creat p
+
+                let p3 = document.createElement('p')
+
+                textdiv.appendChild(p3)
+
+
+
+                //creat span 
+
+                let fspan = document.createElement('span')
+                fspan.className = 'title-1'
+                fspan.append(value.name)
+                console.log(fspan)
+                p.appendChild(fspan)
+
+
+
+                //creat span 
+
+                let sspan = document.createElement('span')
+                sspan.className = 'title-2'
+                sspan.append(value.email)
+                p1.appendChild(sspan)
+
+                //creat span 
+
+                let tspan = document.createElement('span')
+                tspan.className = 'title-3'
+                tspan.append(value.tel)
+                p2.appendChild(tspan)
+
+                let fospan = document.createElement('span')
+                fospan.className = 'title-4'
+                fospan.append(value.rem)
+                p3.appendChild(fospan)
+
+            })
+
+
+        });
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

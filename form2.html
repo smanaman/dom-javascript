@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <label>apple</label>
+        <input id="one" type="number">
+        <label>banana</label>
+        <input id="two" type="number">
+        <label>kiwi</label>
+        <input id="three" type="number">
+        <label>graps</label>
+        <input id="four" type="number">
+
+
+        <button type="submit">submit</button>
+
+    </form>
+
+    <script>
+
+        
+        let input=form.querySelectorAll('input')
+
+        let label=form.querySelectorAll('label')
+
+      for (let i = 0; i <4; i++) {
+   console.log(label[i].value);
+   
+        
+      }
+    </script>
+</body>
+
+</html>

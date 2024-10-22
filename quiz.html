@@ -1,0 +1,50 @@
+<form id="myform">
+    <div class="question">
+
+        <label data-ans="india">Q1 : What is our country name ?</label> <br> <br>
+        <input type="radio" value="india" name="q1"> India
+        <input type="radio" value="china" name="q1"> China
+
+    </div>
+    <div class="question">
+
+        <label data-ans="peacock">Q2 : What is National Bird ?</label> <br> <br>
+        <input type="radio" value="peacock" name="q2"> Peacock
+        <input type="radio" value="sparrow" name="q2"> Sparrow
+
+    </div>
+    <div class="question">
+
+        <label data-ans="tiger">Q3 : What is National Animal ?</label> <br> <br>
+        <input type="radio" value="tiger" name="q3"> Tiger
+        <input type="radio" value="Lion" name="q3"> Lion
+
+    </div>
+
+    <button type="submit">Result</button>
+</form>
+
+<script>
+    let form=document.getElementById('myform')
+
+   form.addEventListener('submit',(event)=>{
+
+event.preventDefault();
+
+let qs=document.querySelectorAll('.question')
+
+
+qs.forEach((question)=>{
+
+let label=question.querySelector('label[data-ans]')
+ let currect=label.getAttribute('data-ans')
+
+ let ua=question.querySelector('input[type="radio"]:checked').value
+
+// let r=ua.value
+
+ console.log(ua)
+})
+
+    })
+</script>
