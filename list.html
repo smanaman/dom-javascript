@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 200px;
+            height: 35px;
+            border-radius: 10px;
+            padding-left: 10px;
+            border: 3px solid #f2f2f2f2;
+        }
+
+        button {
+            width: 95px;
+            height: 35px;
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            margin-left: 10px;
+            border: none;
+        }
+
+        h1 {
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <!-- <form id="form">
+        <input type="text" id="list" placeholder="ENTER YOUR VALUE">
+        <button type="submit">click me</button>
+        <button type="reset">reset</button>
+    </form> -->
+
+
+
+</body>
+<!-- <script>
+
+    class Listname {
+        constructor(value) {
+            this.value = value
+
+        }
+
+        makeSound() {
+            //   console.log(`${this.name} makes ${this.sound}`)
+        }
+
+    }
+    form.addEventListener('submit', (event) => {
+
+        event.preventDefault()
+        let list = document.getElementById('list')
+        let value = list.value
+        console.log(value)
+        let name = new Listname(value);
+        let body = document.getElementById('body')
+
+        let h1 = document.createElement('h1')
+        h1.className = 'h1'
+        h1.textContent = value
+        body.appendChild(h1)
+        // console.log(value)
+
+        console.log(name)
+
+    })
+</script> -->
+
+<script>
+    class Animal{
+ 
+        constructor (name,sound){
+            this.name=name
+            this.sound=sound
+        }
+
+    }
+
+    let cat = new Animal('cat','sound')
+let dog=new Animal('dog','sound')
+    console.log(cat);
+    console.log(dog);
+
+    
+</script>
+</html>

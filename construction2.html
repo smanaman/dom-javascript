@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        width: 200px;
+        height: 30px;
+    }
+    label{
+        font-size: 20px;
+    }
+</style>
+<body>
+    <form id="form">
+
+        <label for="">name</label><br>
+        <input id="name" type="text"><br>
+        <label for="">age</label><br>
+        <input id="age" type="number"><br>
+        <label for="">adrees</label><br>
+        <input id="address" type="text"><br>
+        <label for="">brand</label><br>
+        <input id="brand" type="text"><br>
+        <label for="">salary</label><br>
+        <input id="salary" type="number"><br>
+        <label for="">jobRole</label><br>
+        <input id="jobRole" type="text"><br><br>
+        <button type="submit">click me</button>
+        <button type="reset">reset</button>
+    </form>
+
+
+    <script>
+        //     let emp = [
+        //     {
+        //       name : 'aman',
+        //       age : 18,
+        //       address :  'chalala',
+        //       brand : 'khudhe',
+        //       salary : 10000000000,
+        //       jobRole : 'job compnay hi apne hai'
+        //     },
+        //     {
+        //       name : '',
+        //       age : '',
+        //       address :  '',
+        //       brand : '',
+        //       salary :  '',
+        //       jobRole : ''
+        //     },
+
+        // ]
+
+        let form = document.getElementById('form')
+        form.addEventListener('submit', (event) => {
+
+            event.preventDefault()
+            let name = document.getElementById('name').value
+            let age = document.getElementById('age').value
+            let address = document.getElementById('address').value
+            let brand = document.getElementById('brand').value
+            let salary = document.getElementById('salary').value
+            let jobRole = document.getElementById('jobRole').value
+
+
+            let data = [
+                new Name(name, age, address, brand, salary, jobRole)
+            ]
+
+
+            console.log(data)
+
+
+        })
+        function Name(name, age, address, brand, salary, jobRole) {
+            this.name = name,
+                this.age = age,
+                this.address = address,
+                this.brand = brand,
+                this.salary = salary,
+                this.jobRole = jobRole
+        }
+
+
+
+    </script>
+</body>
+
+</html>
