@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        width: 100px;
+        height: 40px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    #counter {
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        font-size: 40px;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    <div id="counter"></div>
+    <button id="plusevalue">+</button>
+    <button id="minusvalue">-</button>
+
+    <script>
+        let counter = document.getElementById('counter')
+        let plusevalue = document.getElementById('plusevalue')
+        let minusvalue = document.getElementById('minusvalue')
+
+        let count = 0
+        function update() {
+            counter.textContent = count
+        }
+        update()
+        plusevalue.addEventListener('click', () => {
+
+            count++
+          console.log(update())
+        })
+        minusvalue.addEventListener('click', () => {
+            if (count > 0) {
+                count--
+                update()
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
