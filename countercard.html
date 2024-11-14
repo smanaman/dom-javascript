@@ -1,39 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <style>
-.card{
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#fb{
-    width: 30px;
-    height: 30px;
-}
-#sb{
-    width: 30px;
-    height: 30px;
-}
-#h2{
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
-}
-</style>
-<body>
-   <div class="card">
-<button id="fb">+</button>
-<h2 id="h2"></h2>
-<button id="sb">=</button>
-   </div>
+    #root{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+    }
 
+    #fb, #sb {
+        width: 30px;
+        height: 30px;
+    }
+
+    .h2 {
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imgs {
+        width: 100%;
+        height: 200px;
+        border: 1px solid black;
+    }
+
+    .btn {
+        width: 100%;
+        height: 50px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pre {
+        width: 100%;
+        height: 30px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body id="root">
+    <script>
+        let obj = [
+            {
+                img: './download-removebg-preview (15).png',
+                prise: 250
+            },
+            {
+                img: './download-removebg-preview (15).png',
+                prise: 50
+            },
+            {
+                img: './download-removebg-preview (15).png',
+                prise: 20
+            },
+            {
+                img: './download-removebg-preview (15).png',
+                prise: 150
+            },
+            {
+                img: './download-removebg-preview (15).png',
+                prise: 150
+            },
+            {
+                img: './download-removebg-preview (15).png',
+                prise: 150
+            }
+        ]
+
+        let root = document.getElementById('root')
+        obj.forEach((value, index) => {
+            let div = document.createElement('div')
+            div.className = 'card'
+            root.appendChild(div)
+
+            let imges = document.createElement('img')
+            imges.className = 'imgs'
+            imges.src = value.img
+            div.appendChild(imges)
+
+            let sdiv = document.createElement('div')
+            sdiv.className = 'btn'
+            div.appendChild(sdiv)
+
+            let fib = document.createElement('button')
+            fib.className = 'fb'
+            fib.textContent = '+'
+            sdiv.appendChild(fib)
+
+            let text = document.createElement('h2')
+            text.className = 'h2'
+            text.textContent = 1
+            sdiv.appendChild(text)
+
+            let seb = document.createElement('button')
+            seb.className = 'sb'
+            seb.textContent = '-'
+            sdiv.appendChild(seb)
+
+            let paysa = document.createElement('div')
+            paysa.className = 'pre'
+            paysa.textContent = value.prise
+            div.appendChild(paysa)
+
+            let prise = document.createElement('p')
+            prise.className = 'p'
+            paysa.appendChild(prise)
+
+        
+            let count = 0;
+
+         
+            fib.addEventListener('click', () => {
+                count++;
+                text.textContent = count
+                prise.textContent = ":=Total: $" + (count * value.prise)
+            })
+
+        
+            seb.addEventListener('click', () => {
+                if (count > 1) {
+                    count--;
+                    text.textContent = count
+                    prise.textContent = ":=Total: $" + (count * value.prise)
+                }
+            })
+        })
+    </script>
 </body>
+
 </html>
